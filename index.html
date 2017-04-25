@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<link rel="stylesheet" type="text/css" href="Shoe_Catalogue.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.min.js"></script>
+<h1> Shoe Catalogue:</h1>
+<img src="shoes.png" style="width:450px;"></img>
+
+<script class="DropTamplate" type="text/handlebars-x">
+<select>
+<option value=""disabled selected>select options </option>
+{{#each Brand}}
+<option >{{this}}</option>
+{{/each}}
+<select>
+
+ <select >
+ {{#each Color}}
+ <option>{{this}}</option>
+ {{/each}}
+</select>
+
+<h4>Size<h4>
+ <select>
+  {{#each Size}}
+  <option>{{this}}</option>
+  {{/each}}
+  <select>
+</script>
+<button onclick="search()" id="Searching">Search</button>
+
+<script class="tableTamplate" type="text/handlebars-x">
+<h3>Available stock</h3>
+   <table >
+<tr>
+   <th>Brand</th>
+   <th>Color</th>
+   <th>Size</th>
+   <th>Price</th>
+   <th>In_stock</th>
+</tr>
+   {{#each myShoe}}
+  <tr>
+    <td>{{Brand}}</td>
+    <td>{{Color}}</td>
+    <td>{{Size}}</td>
+    <td>{{Price}}</td>
+    <td>{{in_stock}}</td>
+    </tr>
+    {{/each}}
+  </table>
+</script>
+
+<div class="display">
+  <select class="colors"></select>
+  <select class="brands"></select>
+  <select class="sizes"></select>
+</div>
+<div class="output"></div>
+<br>
+<div class="name">
+<label for = "Brand">Brand:</label>
+<input type="text" id="brands" placeholder="type brand name"></input>
+
+<label for = "name">Size:</label>
+<input type="text" id="sizes" placeholder="type sise"></input>
+
+<label for = "name">Color:</label>
+<input type="text" id="colors" placeholder="type color"></input>
+
+<label for = "name">Price:</label>
+<input type="text" id="prices" placeholder="type a price"></input>
+
+<button onclick="AddStock()" id="Addingstock">AddStock</button>
+
+
+</script>
+<body>
+
+</body>
+<script type="text/javascript" src="shoe.js"></script>
+
+</html>
+</body>
+</html>
