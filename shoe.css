@@ -18,3 +18,7 @@ img{
 table , th,tr, td{
   border: 1px solid black;
 }
+
+hr{
+  visibility: hidden;
+}
