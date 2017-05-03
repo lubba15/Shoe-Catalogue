@@ -3,70 +3,70 @@ var shoes = [{
     Color: 'Red',
     Size: 8,
     Price: 799,
-    in_stock: 2
+    In_stock: 2
   },
   {
     Brand: 'Nike',
     Color: 'Green',
     Size: 8,
     Price: 795,
-    in_stock: 1
+    In_stock: 2
   },
   {
     Brand: 'Puma',
     Color: 'Green',
     Size: 8,
     Price: 795,
-    in_stock: 1
+    In_stock: 7
   },
   {
     Brand: 'Adiddas',
     Color: 'Green',
     Size: 7,
     Price: 795,
-    in_stock: 1
+    In_stock: 3
   },
   {
     Brand: 'Puma',
     Color: 'Black',
     Size: 9,
     Price: 795,
-    in_stock: 4
+    In_stock: 4
   },
   {
     Brand: 'Puma',
     Color: 'Green',
     Size: 9,
     Price: 795,
-    in_stock: 3
+    In_stock: 3
   },
   {
     Brand: 'Adiddas',
     Color: 'Yellow',
     Size: 6,
     Price: 950,
-    in_stock: 1
+    In_stock: 1
   },
   {
     Brand: 'Adiddas',
     Color: 'Black',
     Size: 6,
     Price: 800,
-    in_stock: 5
+    In_stock: 5
   },
   {
     Brand: 'Adiddas',
     Color: 'Black',
     Size: 9,
     Price: 800,
-    in_stock: 2
+    In_stock: 2
   },
   {
     Brand: 'Adiddas',
     Color: 'Yellow',
     Size: 9,
     Price: 800,
-    in_stock: 5
+    In_stock: 5
   }
 ];
 
@@ -147,7 +147,6 @@ function search() {
   }
 
   function sizefilter(input) {
-    //console.log(size.value);
     return size.value == input.Size;
   }
   if (brand.value !== "") {
@@ -174,9 +173,51 @@ function search() {
     myShoe: shoeList
   })
   output.innerHTML = restore;
+
+  brand.value ="";
+  size.value ="";
+  color.value ="";
 };
 
+function myAddStock() {
+  var addMoreBrand = document.getElementById("Brands");
+  var addColors = document.querySelector(".Colors");
+  var addSizes = document.querySelector('.Sizes');
+  var addPrices = document.querySelector(".Prices");
+  var addInstock = document.querySelector(".Instock");
 
-function AddStock() {
- 
+  var stockAdded = {};
+  createProperty("Brand", addMoreBrand.value.toLowerCase());
+  createProperty("Color", addColors.value.toLowerCase());
+  createProperty("Size", addSizes.value);
+  createProperty("Price", addPrices.value);
+  createProperty("in_stock",addInstock.value);
+
+  function createProperty(propertyName, propertyValue) {
+    stockAdded[propertyName] = propertyValue;
+  }
+  shoes.push(stockAdded);
+
+  var createBrand = document.querySelector('.brands');
+  var crtBrand = document.createElement('option');
+  crtBrand.text = addMoreBrand.value;
+  createBrand.add(crtBrand);
+  UniqueBrand();
+
+  var createColor = document.querySelector('.colors');
+  var crtColor = document.createElement('option');
+  crtColor.text = addColors.value;
+  createColor.add(crtColor);
+  ColorUnique();
+
+  var createSize = document.querySelector('.sizes');
+  var crtSize = document.createElement('option');
+  crtSize.text = addSizes.value;
+  createColor.add(crtSize);
+  UniqueSize();
+
+  addMoreBrand.value = "";
+  addColors.value = "";
+  addSizes.value = "";
+  addPrices.value = "";
 };

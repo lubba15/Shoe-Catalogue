@@ -8,8 +8,8 @@
 <h1> Shoe Catalogue:</h1>
 
 <body>
-  <img src="shoes.png" style="width:450px;"></img>
-
+  <img src="shoes.png" style="width:450px;">
+  <div class="drop" align="center">
   <script class="DropTamplate" type="text/handlebars-x">
 
     <option value=""disabled selected> select option</option>
@@ -17,10 +17,10 @@
     <option>{{this}}</option>
     {{/each}}
   </script>
-
+</div>
   <script id="tableTamplate" type="text/handlebars-x">
-    <h3>Available stock</h3>
-    <table>
+    <h1 align="center">Available stock</h1>
+    <table align="center">
       <tr>
         <th>Brand</th>
         <th>Color</th>
@@ -48,19 +48,26 @@
 </br>
   <div class="output"></div>
   <div class="name">
+    <h1 align="center">Add Stock</h1>
     <label for="Brand">Brand:</label>
-    <input type="text" id="Brands" placeholder="type brand name"></input>
+    <input type="text" id="Brands" value='' placeholder="type brand name"></input>
 
     <label for="name">Size:</label>
-    <input type="text" id="Sizes" placeholder="type sise"></input>
+    <input type="text" class="Sizes" placeholder="type sise"></input>
 
     <label for="name">Color:</label>
-    <input type="text" id="Colors" placeholder="type color"></input>
+    <input type="text" class="Colors" placeholder="type color"></input>
 
     <label for="name">Price:</label>
-    <input type="text" id="Prices" placeholder="type a price"></input>
+    <input type="text" class="Prices" placeholder="type a price"></input>
 
-    <button onclick="AddStock()" id="Addingstock">AddStock</button>
+    <label for="name">In Stock:</label>
+    <input type="text" class="Instock" placeholder=""></input>
+
+    <button onclick="myAddStock()">AddStock</button>
+
+<div class = "mystock"></div>
+
 </body>
 <script type="text/javascript" src="shoe.js"></script>
 

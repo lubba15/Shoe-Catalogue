@@ -6,13 +6,13 @@ h1{
   font-size: 70px;
 }
 img{
-  padding-left: 400px;
-  width: 465%;
-  height: 362%;
+  padding-left: 300px;
+  width: 265%;
+  height: 162%;
 }
 .name{
 
-    padding-left: 130px;;
+    padding-left: 90px;;
   }
 }
 table , th,tr, td{
@@ -21,4 +21,7 @@ table , th,tr, td{
 
 hr{
   visibility: hidden;
+}
+select{
+  text-transform: capitalize;
 }
