@@ -3,70 +3,70 @@ var shoes = [{
     Color: 'Red',
     Size: 8,
     Price: 799,
-    In_stock: 2
+    in_stock: 2
   },
   {
     Brand: 'Nike',
     Color: 'Green',
     Size: 8,
     Price: 795,
-    In_stock: 2
+    in_stock: 2
   },
   {
     Brand: 'Puma',
     Color: 'Green',
     Size: 8,
     Price: 795,
-    In_stock: 7
+    in_stock: 7
   },
   {
     Brand: 'Adiddas',
     Color: 'Green',
     Size: 7,
     Price: 795,
-    In_stock: 3
+    in_stock: 3
   },
   {
     Brand: 'Puma',
     Color: 'Black',
     Size: 9,
     Price: 795,
-    In_stock: 4
+    in_stock: 4
   },
   {
     Brand: 'Puma',
     Color: 'Green',
     Size: 9,
     Price: 795,
-    In_stock: 3
+    in_stock: 3
   },
   {
     Brand: 'Adiddas',
     Color: 'Yellow',
     Size: 6,
     Price: 950,
-    In_stock: 1
+    in_stock: 1
   },
   {
     Brand: 'Adiddas',
     Color: 'Black',
     Size: 6,
     Price: 800,
-    In_stock: 5
+    in_stock: 5
   },
   {
     Brand: 'Adiddas',
     Color: 'Black',
     Size: 9,
     Price: 800,
-    In_stock: 2
+    in_stock: 2
   },
   {
     Brand: 'Adiddas',
     Color: 'Yellow',
     Size: 9,
     Price: 800,
-    In_stock: 5
+    in_stock: 5
   }
 ];
 
@@ -81,8 +81,7 @@ var output = document.querySelector('.output');
 var dropDown = document.querySelector('.DropTamplate').innerHTML;
 var drop = Handlebars.compile(dropDown);
 
-function UniqueBrand() {
-  var UniqueBrand = [];
+function UniqueBrand() {  var UniqueBrand = [];
   var brandMap = {};
   for (var i = 0; i < shoes.length; i++) {
     var shoeBrand = shoes[i];
@@ -156,7 +155,9 @@ function search() {
     if (brand.value !== "") {
       var shoeList = shoeList.filter(colorfilter)
     }
-    var shoeList = shoes.filter(colorfilter);
+    else {
+      var shoeList = shoes.filter(colorfilter);
+    }
   }
   if (size.value !== "") {
     if (color.value !== "" && brand.value !== "") {
@@ -172,7 +173,12 @@ function search() {
   var restore = table({
     myShoe: shoeList
   })
-  output.innerHTML = restore;
+  if (shoeList.length > 0) {
+    output.innerHTML = restore;
+  }
+  else if (shoeList.length <= 0) {
+    output.innerHTML = "Out of stock for " + color.value + " " + brand.value + " " + size.value + "";
+  }
 
   brand.value ="";
   size.value ="";
@@ -220,4 +226,5 @@ function myAddStock() {
   addColors.value = "";
   addSizes.value = "";
   addPrices.value = "";
+  addInstock.value ="";
 };

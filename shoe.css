@@ -1,6 +1,6 @@
 h1{
   display: block;
-    text-align:center;
+    padding-left: 257px;
     position:relative;
   font-weight: bold;
   font-size: 70px;
@@ -13,10 +13,6 @@ img{
 .name{
 
     padding-left: 90px;;
-  }
-}
-table , th,tr, td{
-  border: 1px solid black;
 }
 
 hr{
@@ -25,3 +21,27 @@ hr{
 select{
   text-transform: capitalize;
 }
+.display{
+  padding-left: 330px;
+}
+.name{
+  padding-left: 1px;
+}
+.stock{
+  display: block;
+  padding-left: 452px;
+  font-weight: bold;
+  font-size: 41px;
+}
+.output{
+  padding-left: 414px;
+}
+h2{
+  padding-left: -130px;
+  font-weight: bold;
+  font-size: 41px;
+}
+table,th,td{
+    border: 2px solid black;
+    border-collapse:collapse;
+  }

@@ -9,7 +9,6 @@
 
 <body>
   <img src="shoes.png" style="width:450px;">
-  <div class="drop" align="center">
   <script class="DropTamplate" type="text/handlebars-x">
 
     <option value=""disabled selected> select option</option>
@@ -17,23 +16,22 @@
     <option>{{this}}</option>
     {{/each}}
   </script>
-</div>
   <script id="tableTamplate" type="text/handlebars-x">
-    <h1 align="center">Available stock</h1>
-    <table align="center">
+    <h2 >Available stock</h2>
+    <table style="width:60%" border="2px">
       <tr>
         <th>Brand</th>
         <th>Color</th>
         <th>Size</th>
         <th>Price</th>
-        <th>In_stock</th>
+        <th>In stock</th>
       </tr>
       {{#each myShoe}}
       <tr>
         <td>{{Brand}}</td>
         <td>{{Color}}</td>
         <td>{{Size}}</td>
-        <td>{{Price}}</td>
+        <td>R{{Price}}</td>
         <td>{{in_stock}}</td>
       </tr>
       {{/each}}
@@ -44,16 +42,16 @@
     <select class="colors"></select>
     <select class="sizes"></select>
     <button onclick="search()" id="Searching">Search</button>
+
   </div>
 </br>
-  <div class="output"></div>
   <div class="name">
-    <h1 align="center">Add Stock</h1>
+    <h1 class="stock">Add Stock</h1>
     <label for="Brand">Brand:</label>
     <input type="text" id="Brands" value='' placeholder="type brand name"></input>
 
     <label for="name">Size:</label>
-    <input type="text" class="Sizes" placeholder="type sise"></input>
+    <input type="text" class="Sizes" placeholder="type size"></input>
 
     <label for="name">Color:</label>
     <input type="text" class="Colors" placeholder="type color"></input>
@@ -62,11 +60,10 @@
     <input type="text" class="Prices" placeholder="type a price"></input>
 
     <label for="name">In Stock:</label>
-    <input type="text" class="Instock" placeholder=""></input>
-
+    <input type="text" class="Instock" placeholder="Add stock"></input>
     <button onclick="myAddStock()">AddStock</button>
-
-<div class = "mystock"></div>
+  </div>
+  <div class="output"></div>
 
 </body>
 <script type="text/javascript" src="shoe.js"></script>
